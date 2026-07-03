@@ -9,3 +9,10 @@ document.getElementById("loadButton").addEventListener("click", async () => {
     tbody.appendChild(row);
   });
 });
+
+document.getElementById("saludar").addEventListener("click", async () => {
+  const name = document.getElementById("name").value;
+  const response = await fetch(`/api/greet?name=${name}`);
+  const saludo = await response.json();
+  document.getElementById("aaa").textContent = saludo.message;
+});
