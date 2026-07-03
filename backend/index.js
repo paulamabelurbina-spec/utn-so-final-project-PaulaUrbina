@@ -23,6 +23,24 @@ app.get("/api/students", async (req, res) => {
     res.status(500).send("DB error");
   }
 });
+app.post("/api/students", async (req, res) => {
+  try {
+    const { name } = req.body;
 
+    if (!name || name.trim() === "") {
+      return res.status(400).json({ error: "El nombre es obligatorio" });
+    }
+
+    const result = await db.query(
+      "INSERT INTO students (name) VALUES ($1) RETURNING id, name",
+      [name.trim()]
+    );
+
+    res.status(201).json(result.rows[0]);
+  } catch (err) {
+    console.error("Error al insertar estudiante:", err);
+    res.status(500).json({ error: "Error interno al agregar el estudiante" });
+  }
+});
 // Start the server
 app.listen(port, () => console.log(`App running on port ${port}`));

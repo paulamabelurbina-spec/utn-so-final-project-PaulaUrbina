@@ -1,7 +1,8 @@
 FROM node:lts-alpine3.21
 
 # Update Alpine packages to reduce vulnerabilities
-RUN apk update && apk upgrade --no-cache
+RUN apk update && apk upgrade --no-cache && \
+    apk add --no-cache wget
 
 WORKDIR /app
 

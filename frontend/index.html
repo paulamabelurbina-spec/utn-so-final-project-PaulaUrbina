@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Estudiantes</title>
-    <link rel="stylesheet" href="styles_modern.css" />
-  </head>
-  <body>
-    <h1>Lista de Estudiantes</h1>
-    <button id="loadButton">Cargar Estudiantes</button>
-    <table id="studentsTable">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <button id="saludar">Saludame</button>
-    <input type="text" id="name">
-    <p id="aaa">
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Estudiantes</title>
+  <link rel="stylesheet" href="styles_modern.css" />
+</head>
+<body>
+
+  <h1>Lista de Estudiantes</h1>
+
+
+  <!-- SECCIÓN DE SALUDO -->
+
+  <div style="max-width: 420px; margin: 30px auto; text-align: center;">
+    <h2 style="margin-bottom: 15px;">¡Bienvenido!</h2>
+    
+    <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+      <input 
+        type="text" 
+        id="name" 
+        placeholder="Ingresa tu nombre"
+        style="padding: 10px 14px; width: 220px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px;"
+      >
+      <button 
+        id="saludar"
+        style="padding: 10px 22px; background: linear-gradient(90deg, #6366f1, #60a5fa); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;"
+      >
+        Saludarme
+      </button>
+    </div>
+    
+    <p id="aaa" style="margin-top: 18px; font-size: 20px; font-weight: 500; min-height: 30px;"></p>
+  </div>
+
+  <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;">
+
+
+  <!-- LISTA DE ESTUDIANTES -->
+
+  <button id="loadButton">Cargar Estudiantes</button>
+
+  <table id="studentsTable">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;">
+
+
+  <!-- AGREGAR NUEVO ESTUDIANTE -->
+
+  <div style="max-width: 500px; margin: 40px auto; text-align: left;">
+    <h2 style="margin-bottom: 15px; color: #333;">Agregar nuevo estudiante</h2>
+    
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <input 
+        type="text" 
+        id="newStudentName" 
+        placeholder="Nombre del estudiante"
+        style="flex: 1; padding: 12px 16px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px;"
+      >
+      <button 
+        id="addStudentBtn"
+        style="padding: 12px 24px; background: linear-gradient(90deg, #6366f1, #60a5fa); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap;"
+      >
+        Agregar Estudiante
+      </button>
+    </div>
+    
+    <p id="addResult" style="margin-top: 12px; font-weight: 500; min-height: 24px;"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
